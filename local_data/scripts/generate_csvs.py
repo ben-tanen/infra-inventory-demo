@@ -12,8 +12,10 @@ Usage (from repo root):
 """
 
 import csv
+import hashlib
 import json
 import os
+import random
 import sys
 from datetime import datetime, timedelta, timezone
 
@@ -127,6 +129,31 @@ def workflow_type_label(wf_type):
     return f"{wf_type}-query"
 
 
+def workflow_rng(comp_name, wf_name):
+    """Return a seeded Random instance for deterministic per-workflow variation."""
+    seed = int(hashlib.md5(f"{comp_name}/{wf_name}".encode()).hexdigest()[:8], 16)
+    return random.Random(seed)
+
+
+def workflow_schedule(rng):
+    """Pick a schedule weighted 20% hours / 60% days / 20% weeks."""
+    r = rng.random()
+    if r < 0.20:
+        return "hours"
+    elif r < 0.80:
+        return "days"
+    else:
+        return "weeks"
+
+
+def workflow_enabled(rng):
+    """~5% of workflows are disabled."""
+    return rng.random() >= 0.05
+
+
+OFFSET_BY_SCHEDULE = {"hours": "PT15M", "days": "PT1H", "weeks": "P1D"}
+
+
 # ---------------------------------------------------------------------------
 # Entity ID conventions (mirroring the real inventory pipeline)
 # ---------------------------------------------------------------------------
@@ -225,6 +252,9 @@ def build_entity_rows(yaml_data):
             for wf in comp.get("workflows", []):
                 wf_name = wf["workflow"]
                 wf_type = wf.get("type", "cast-member")
+                rng = workflow_rng(comp_name, wf_name)
+                sched = workflow_schedule(rng)
+                enabled = workflow_enabled(rng)
                 rows.append({
                     "entity_id": workflow_entity_id(comp_name, wf_name),
                     "entity_type": "workflow",
@@ -237,11 +267,11 @@ def build_entity_rows(yaml_data):
                         "workflow": {
                             "bqDestinationTableProjects": [project_name],
                             "bqJobProjects": [project_name],
-                            "enabled": True,
-                            "offset": "PT1H",
+                            "enabled": enabled,
+                            "offset": OFFSET_BY_SCHEDULE.get(sched, "PT1H"),
                             "orchestrationType": "orchestrator",
                             "parentComponentId": component_entity_id(comp_name),
-                            "schedule": "days",
+                            "schedule": sched,
                             "serviceAccount": f"{comp_name}@{project_name}.iam.gserviceaccount.com",
                             "orchestratorComponentId": comp_name,
                             "orchestratorWorkflowId": wf_name,

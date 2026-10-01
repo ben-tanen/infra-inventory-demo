@@ -439,16 +439,16 @@ export function InventoryNetworkGraph({
           d3
             .forceLink<GraphNode, GraphLink>(links)
             .id(item => item.id)
-            .distance(55)
-            .strength(0.9),
+            .distance(100)
+            .strength(1),
         )
         .force(
           'charge',
           d3
             .forceManyBody<GraphNode>()
-            .strength(-24)
-            .distanceMin(8)
-            .distanceMax(240),
+            .strength(-80)
+            .distanceMin(10)
+            .distanceMax(400),
         )
         .force('center', d3.forceCenter(width / 2, height / 2))
         .force('x', d3.forceX<GraphNode>(width / 2).strength(0.007))

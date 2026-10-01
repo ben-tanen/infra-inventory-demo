@@ -2,8 +2,7 @@ import type {
   WorkflowHealthEnvelope,
   WorkflowHealthFilters,
 } from './contracts';
-import { INVENTORY_WORKFLOW_HEALTH_FIXTURE } from './fixtures';
-import { summarizeWorkflowPartitions } from './workflowHealthSummary';
+import { buildWorkflowHealth } from './fixtureBuilders';
 
 export function validWorkflowHealthFilters(
   filters: WorkflowHealthFilters,
@@ -15,13 +14,5 @@ export function validWorkflowHealthFilters(
 export function fixtureEnvelope(
   filters: WorkflowHealthFilters,
 ): WorkflowHealthEnvelope {
-  return {
-    ...INVENTORY_WORKFLOW_HEALTH_FIXTURE,
-    appliedFilters: filters,
-    data: {
-      ...INVENTORY_WORKFLOW_HEALTH_FIXTURE.data,
-      componentId: filters.componentId,
-      workflowId: filters.workflowId,
-    },
-  };
+  return buildWorkflowHealth(filters.componentId, filters.workflowId);
 }
