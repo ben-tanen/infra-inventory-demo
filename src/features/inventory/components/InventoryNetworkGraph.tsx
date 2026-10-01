@@ -446,9 +446,9 @@ export function InventoryNetworkGraph({
           'charge',
           d3
             .forceManyBody<GraphNode>()
-            .strength(-80)
+            .strength(-150)
             .distanceMin(10)
-            .distanceMax(400),
+            .distanceMax(500),
         )
         .force('center', d3.forceCenter(width / 2, height / 2))
         .force('x', d3.forceX<GraphNode>(width / 2).strength(0.007))

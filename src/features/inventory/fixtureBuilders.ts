@@ -94,7 +94,7 @@ interface WorkflowProfile {
 
 // Showcase overrides for demo-ready scenarios
 const SHOWCASE: Record<string, Partial<WorkflowProfile> & { healthPattern: HealthPattern }> = {
-  'survivor/jeff_probst': {
+  'suits/meghan_duchess_of_sussex': {
     healthPattern: 'just_broke',
     runtimeMs: 7_200_000,
     completionOffsetMs: 10_800_000,
@@ -114,7 +114,7 @@ const SHOWCASE: Record<string, Partial<WorkflowProfile> & { healthPattern: Healt
     partitionCount: 7,
     enabled: true,
   },
-  'better-call-saul/nacho_varga': {
+  'top-gun-maverick/tom_cruise': {
     healthPattern: 'waiting',
     runtimeMs: 900_000,
     completionOffsetMs: 4_500_000,
@@ -134,7 +134,7 @@ const SHOWCASE: Record<string, Partial<WorkflowProfile> & { healthPattern: Healt
     partitionCount: 7,
     enabled: true,
   },
-  'game-of-thrones/tyrion_the_halfman_lannister': {
+  'the-west-wing/josiah_bartlet': {
     healthPattern: 'flaky',
     runtimeMs: 1_800_000,
     completionOffsetMs: 7_200_000,

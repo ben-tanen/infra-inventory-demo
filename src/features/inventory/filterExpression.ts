@@ -36,7 +36,7 @@ export const DEFAULT_FILTER_EXPRESSION: InventoryFilterExpression = {
 };
 
 export const DEFAULT_INVENTORY_VIEW: InventoryViewState = {
-  entityTypes: ['component', 'gcp_project', 'repository'],
+  entityTypes: ['component', 'gcp_project', 'workflow'],
   expression: DEFAULT_FILTER_EXPRESSION,
   hops: 1,
 };
