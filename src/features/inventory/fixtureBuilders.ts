@@ -442,6 +442,42 @@ export function buildGcpProjectJobs(
     }
   }
 
+  // Add unattributed sources — seeded per project
+  const projRng = seededRng(`unattributed:${projectId}`);
+  const totalWorkflowSlot = rows.reduce((s, r) => s + (r.totalSlotHours ?? 0), 0);
+
+  const UNATTRIBUTED_SOURCES = [
+    { source: 'BigQuery console', base: 0.15 },
+    { source: 'AI agents', base: 0.08 },
+    { source: 'bq CLI', base: 0.03 },
+    { source: 'Unknown client (service account)', base: 0.02 },
+  ];
+  for (const { source, base } of UNATTRIBUTED_SOURCES) {
+    const share = base * (0.5 + projRng());
+    const slotHours = Math.round(totalWorkflowSlot * share * 100) / 100;
+    if (slotHours < 0.01) continue;
+    const jobs = Math.max(1, Math.round(slotHours * (3 + projRng() * 10)));
+    const bytes = Math.round(slotHours * (50 + projRng() * 200) * 2 ** 30);
+    const failed = projRng() < 0.3 ? Math.ceil(jobs * 0.05 * projRng()) : 0;
+    rows.push({
+      attributionCategory: 'unattributed',
+      componentId: null,
+      executions: 0,
+      failedJobs: failed,
+      heaviestJob: slotHours > 5 ? {
+        bqConsoleUrl: null,
+        jobId: `job-${projectId}-${source.toLowerCase().replace(/\s+/g, '-')}-heaviest`,
+        totalSlotMs: Math.round(slotHours * 0.3 * 3_600_000),
+      } : null,
+      jobs,
+      missingSlotJobs: 0,
+      slotHoursPerExecution: null,
+      source,
+      totalBytesProcessed: bytes,
+      totalSlotHours: slotHours,
+    });
+  }
+
   // Sort by slot hours descending
   rows.sort((a, b) => (b.totalSlotHours ?? 0) - (a.totalSlotHours ?? 0));
 
