@@ -1,0 +1,1356 @@
+.page {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 48px 32px;
+}
+
+.header {
+  align-items: flex-start;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.headerIntro {
+  max-width: 820px;
+}
+
+.headerIntro > p:not(.eyebrow) {
+  color: var(--text-subdued, #656565);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.eyebrow {
+  color: var(--text-subdued, #656565);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.dataAsOf {
+  color: var(--text-subdued, #656565);
+  font-size: 0.8rem;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.dataAsOf em,
+.dataAsOf time {
+  display: block;
+}
+
+.displayPanel,
+.networkSection,
+.tableSection {
+  background: var(--background-base, #ffffff);
+  border: 1px solid var(--decorative-subdued, #dedede);
+  border-radius: 8px;
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.displayPanel h2,
+.networkSection h2,
+.tableSection h2,
+.entityDetails h3 {
+  margin: 0;
+}
+
+.networkSection p,
+.tableSection p {
+  color: var(--text-subdued, #656565);
+  margin: 6px 0 0;
+}
+
+.filterPanelHeading {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.filterPanelHeading h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.filterSummary {
+  color: var(--text-subdued, #656565);
+  font-size: 0.875rem;
+  margin: 8px 0 0;
+}
+
+.sectionHeadingRow,
+.displayControls {
+  align-items: flex-start;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.displayControls {
+  margin-top: 20px;
+}
+
+.filterBuilder {
+  border-top: 1px solid var(--decorative-subdued, #dedede);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.filterGroups {
+  margin-top: 0;
+}
+
+.emptyFilterState {
+  background: var(--background-elevated-base, #f3f3f3);
+  border-radius: 8px;
+  color: var(--text-subdued, #656565);
+  margin: 0;
+  padding: 16px;
+}
+
+.filterGroup {
+  border: 1px solid var(--decorative-subdued, #dedede);
+  border-radius: 8px;
+  margin: 0;
+  padding: 16px;
+}
+
+.filterGroup legend {
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+.filterRow,
+.tableControls,
+.pagination {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.groupLegend {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns:
+    minmax(160px, 1fr) minmax(150px, 0.8fr) minmax(220px, 2fr)
+    36px;
+  margin-top: 8px;
+}
+
+.filterRowNoValue {
+  grid-template-columns: minmax(160px, 1fr) minmax(150px, 0.8fr) 36px;
+}
+
+.groupJoin {
+  margin: 8px 16px;
+}
+
+.filterJoin {
+  margin: 8px 0 0 16px;
+}
+
+.logicButton {
+  background: var(--background-elevated-base, #f3f3f3);
+  border: 1px solid var(--decorative-subdued, #b3b3b3);
+  border-radius: 999px;
+  color: var(--text-subdued, #656565);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
+.logicButton:hover {
+  border-color: var(--text-subdued, #656565);
+  color: var(--text-base, #121212);
+}
+
+.logicButton:focus-visible {
+  outline: 2px solid var(--text-bright-accent, #117a37);
+  outline-offset: 2px;
+}
+
+.inlineControl,
+.tableControls label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  gap: 5px;
+}
+
+.inlineControl {
+  font-size: 1rem;
+}
+
+.tableControls label {
+  font-size: 0.8rem;
+}
+
+.filterRow select,
+.filterRow input,
+.inlineControl select,
+.tableControls input[type='search'] {
+  background: var(--background-base, #ffffff);
+  border: 1px solid var(--decorative-subdued, #b3b3b3);
+  border-radius: 4px;
+  color: var(--text-base, #121212);
+  font: inherit;
+  min-height: 36px;
+  padding: 6px 8px;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 12px;
+}
+
+.entityTypeControl .checkboxGroup {
+  margin-top: 0;
+}
+
+.checkboxLabel {
+  align-items: center;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  gap: 7px !important;
+}
+
+.secondaryButton,
+.textButton,
+.iconButton {
+  cursor: pointer;
+  font: inherit;
+}
+
+.secondaryButton {
+  background: transparent;
+  border: 1px solid var(--decorative-subdued, #b3b3b3);
+  border-radius: 999px;
+  margin-top: 12px;
+  padding: 7px 14px;
+}
+
+.secondaryButton:disabled,
+.iconButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.textButton {
+  background: none;
+  border: 0;
+  color: var(--text-bright-accent, #117a37);
+  padding: 0;
+  text-decoration: underline;
+}
+
+.hiddenRelatedLink {
+  color: var(--text-subdued, #656565);
+}
+
+.iconButton {
+  background: transparent;
+  border: 1px solid var(--decorative-subdued, #b3b3b3);
+  border-radius: 50%;
+  height: 30px;
+  line-height: 1;
+  width: 30px;
+}
+
+.groupRemoveButton {
+  height: 22px;
+  width: 22px;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.summary span {
+  background: var(--background-elevated-base, #f3f3f3);
+  border-radius: 999px;
+  padding: 9px 14px;
+  position: relative;
+}
+
+.summary span:hover::after,
+.summary span:focus::after {
+  background: #121212;
+  border-radius: 5px;
+  color: #ffffff;
+  content: attr(data-tooltip);
+  font-size: 0.75rem;
+  left: 0;
+  min-width: 150px;
+  padding: 8px 10px;
+  position: absolute;
+  top: calc(100% + 6px);
+  white-space: pre-line;
+  z-index: 3;
+}
+
+.summary strong {
+  margin-right: 4px;
+}
+
+.graph {
+  border: 1px solid var(--decorative-subdued, #dedede);
+  border-radius: 6px;
+  margin-top: 16px;
+  min-height: 480px;
+  overflow: hidden;
+  position: relative;
+}
+
+.graphTooltip {
+  background: var(--background-base, #ffffff);
+  border: 1px solid var(--decorative-subdued, #dedede);
+  border-radius: 7px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+  color: var(--text-base, #121212);
+  font-size: 0.78rem;
+  max-width: 320px;
+  padding: 12px;
+  pointer-events: auto;
+  position: absolute;
+  width: max-content;
+  z-index: 4;
+}
+
+.graphTooltip[hidden] {
+  display: none;
+}
+
+.graphTooltipHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.graphTooltipTitle {
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.graphTooltipType {
+  background: var(--background-elevated-base, #f3f3f3);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 7px;
+}
+
+.graphTooltipBadges {
+  align-items: flex-end;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.graphTooltipStatus {
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 7px;
+}
+
+.graphTooltipMatch {
+  background: #dff7e7;
+  color: #0f5c2b;
+}
+
+.graphTooltipRelated {
+  background: #e8e8e8;
+  color: #5f5f5f;
+}
+
+.graphTooltipDetails {
+  display: grid;
+  gap: 5px 12px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  margin: 0;
+}
+
+.graphTooltipDetails dt {
+  color: var(--text-subdued, #656565);
+  font-weight: 700;
+}
+
+.graphTooltipDetails dd {
+  margin: 0;
+  max-width: 210px;
+  overflow-wrap: anywhere;
+}
+
+.graphTooltipAction {
+  background: transparent;
+  border: 1px solid var(--decorative-subdued, #b3b3b3);
+  border-radius: 999px;
+  color: var(--text-bright-accent, #117a37);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  margin-top: 12px;
+  padding: 6px 10px;
+  width: 100%;
+}
+
+.graphTooltipAction:hover {
+  background: var(--background-elevated-base, #f3f3f3);
+}
+
+.graphTooltipAction:focus-visible {
+  outline: 2px solid var(--text-bright-accent, #117a37);
+  outline-offset: 2px;
+}
+
+.graphMessage,
+.notice,
+.error {
+  border-radius: 6px;
+  margin-top: 16px;
+  padding: 24px;
+}
+
+.graphMessage,
+.notice {
+  background: var(--background-elevated-base, #f3f3f3);
+  color: var(--text-subdued, #656565);
+}
+
+.error {
+  background: #fff0f0;
+  color: #a50000;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.graphLegendControls {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend li {
+  align-items: center;
+  display: flex;
+  font-size: 0.75rem;
+  gap: 5px;
+}
+
+.legendDot {
+  background: #8f8f8f;
+  border-radius: 50%;
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+}
+
+.component {
+  background: #1ed760;
+}
+
+.gcp_project {
+  background: #509bf5;
+}
+
+.repository {
+  background: #af80ff;
+}
+
+.workflow {
+  background: #ffa42b;
+}
+
+.tableControls {
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.tableScroller {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 1050px;
+  width: 100%;
+}
+
+.table caption {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--decorative-subdued, #dedede);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table thead th {
+  background: var(--background-elevated-base, #f3f3f3);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.monospace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  max-width: 300px;
+  overflow-wrap: anywhere;
+}
+
+.hiddenRow {
+  color: var(--text-subdued, #7a7a7a);
+  opacity: 0.62;
+}
+
+.selectedRow {
+  background: #f0f8ff;
+}
+
+.hiddenBadge,
+.relatedBadge {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  margin-left: 7px;
+  padding: 2px 6px;
+}
+
+.hiddenBadge {
+  background: #e5e5e5;
+}
+
+.relatedBadge {
+  background: #d9eaff;
+  color: #174b7a;
+}
+
+.detailRow > td {
+  background: var(--background-elevated-base, #f8f8f8);
+  padding: 18px 24px;
+}
+
+.entityDetails {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.entityDetails h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.workflowDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.workflowDetailHeading {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.workflowDetailHeading h3 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.workflowDetailContent {
+  padding: 10px 0 0 42px;
+}
+
+.workflowDetailContent > p {
+  margin: 0;
+}
+
+.workflowHealth {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.workflowHealthStatusRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.workflowHealthStatusRow em {
+  color: var(--text-subdued, #656565);
+}
+
+.workflowHealthStatus {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 9px;
+}
+
+.workflowHealthStatus_success {
+  background: #d9f2e3;
+  color: #116530;
+}
+
+.workflowHealthStatus_running {
+  background: #e4f0fb;
+  color: #245f91;
+}
+
+.workflowHealthStatus_waiting {
+  background: #fff0c7;
+  color: #785900;
+}
+
+.workflowHealthStatus_failed {
+  background: #f9d9d7;
+  color: #9c1c1c;
+}
+
+.workflowHealthStatus_unknown {
+  background: #e8e8e8;
+  color: #555;
+}
+
+.workflowHealthGrid {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(230px, 0.55fr) minmax(0, 1.45fr);
+}
+
+.workflowHealthGrid h4,
+.workflowHealthGrid h5 {
+  margin: 0 0 10px;
+}
+
+.workflowHealthLatest {
+  display: grid;
+  gap: 6px 14px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  margin: 0 0 12px;
+}
+
+.workflowHealthLatest dt {
+  color: var(--text-subdued, #656565);
+  font-weight: 700;
+}
+
+.workflowHealthLatest dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.workflowHealthMetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.workflowHealthMetric {
+  border: 1px solid var(--decorative-subdued, #b7b7b7);
+  border-radius: 6px;
+  min-width: 145px;
+  padding: 8px 10px;
+}
+
+.workflowHealthMetric span,
+.workflowHealthMetric strong {
+  display: block;
+}
+
+.workflowHealthMetric span {
+  color: var(--text-subdued, #656565);
+  font-size: 0.75rem;
+}
+
+.workflowHealthMetric strong {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.workflowHealthCharts {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.workflowHealthChart {
+  min-width: 0;
+}
+
+.workflowHealthChart h5 {
+  font-size: 0.875rem;
+  margin-bottom: 2px;
+}
+
+.workflowHealthChart > p {
+  color: var(--text-subdued, #656565);
+  font-size: 0.72rem;
+  margin: 0 0 4px;
+}
+
+.workflowHealthChartSvg {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.workflowHealthXAxis text,
+.workflowHealthYAxis text,
+.workflowHealthMedianLabel {
+  fill: var(--text-subdued, #656565);
+  font-size: 0.68rem;
+}
+
+.workflowHealthXAxis path,
+.workflowHealthXAxis line,
+.workflowHealthYAxis path {
+  stroke: var(--decorative-subdued, #b7b7b7);
+}
+
+.workflowHealthYAxis line {
+  stroke: var(--decorative-subdued, #dedede);
+}
+
+.workflowHealthLine {
+  fill: none;
+  stroke: #14833b;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.workflowHealthDot {
+  fill: #14833b;
+  stroke: var(--background-base, #fff);
+  stroke-width: 1.5;
+}
+
+.workflowHealthBar {
+  fill: #8ab89a;
+}
+
+.workflowHealthValueLabel {
+  fill: var(--text-base, #121212);
+  font-size: 0.68rem;
+  font-weight: 700;
+  paint-order: stroke;
+  pointer-events: none;
+  stroke: var(--background-base, #fff);
+  stroke-linejoin: round;
+  stroke-width: 3px;
+}
+
+.workflowHealthMedianLine {
+  stroke: var(--text-subdued, #656565);
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+
+.workflowHealthMedianLabel {
+  font-weight: 700;
+}
+
+.screenReaderOnly {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.workflowHealthError {
+  color: var(--text-negative, #b00020);
+  margin: 0;
+}
+
+.workflowResources {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.workflowResources h4 {
+  font-size: 0.875rem;
+  margin: 0 0 4px;
+}
+
+.workflowResourcesSource,
+.workflowResourcesSubcopy {
+  color: var(--text-subdued, #656565);
+}
+
+.workflowResourcesSubcopy {
+  font-size: 0.78rem;
+  margin: 0 0 10px;
+}
+
+.workflowResourceSummarySubcopy {
+  padding-bottom: 8px;
+}
+
+.workflowResourceOverview {
+  align-items: start;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(310px, 410px) minmax(0, 1fr);
+}
+
+.workflowResourceMetrics {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(145px, 200px));
+}
+
+.workflowResourceWarnings {
+  background: #fff7dd;
+  border-radius: 6px;
+  color: #634f00;
+  margin: 0;
+  padding: 10px 12px 10px 30px;
+}
+
+.workflowResourceChart {
+  min-width: 0;
+}
+
+.workflowResourceChartCanvas {
+  position: relative;
+}
+
+.workflowResourceChartTooltip {
+  background: #121212;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  color: #fff;
+  font-size: 0.75rem;
+  min-width: 210px;
+  padding: 9px 11px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.workflowResourceChartTooltipTitle {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.workflowResourceChartTooltipRow {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.workflowResourceChartTooltipRow + .workflowResourceChartTooltipRow {
+  margin-top: 3px;
+}
+
+.workflowResourceChartMetric {
+  align-items: center;
+  color: var(--text-base, #121212);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 6px;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.workflowResourceCaret {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.workflowResourceChart select {
+  cursor: pointer;
+  height: 100%;
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.workflowResourceTableWrapper {
+  max-height: min(65vh, 640px);
+  overflow: auto;
+}
+
+.workflowResourceTable {
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.workflowResourceTable th,
+.workflowResourceTable td {
+  border-bottom: 1px solid var(--decorative-subdued, #dedede);
+  padding: 6px 10px 6px 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.workflowResourceTable th {
+  color: var(--text-subdued, #656565);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.workflowResourceTable thead th {
+  background: var(--background-base, #fff);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.workflowResourceDestination {
+  max-width: 360px;
+  overflow-wrap: anywhere;
+  white-space: normal !important;
+}
+
+.workflowResourceStatements {
+  max-width: 220px;
+  overflow-wrap: anywhere;
+  white-space: normal !important;
+}
+
+.workflowResourceSpecialRow {
+  font-style: italic;
+}
+
+.workflowResourceTable tfoot th,
+.workflowResourceTable tfoot td {
+  background: var(--background-tinted-base, #f7f7f7);
+  border-top: 2px solid var(--decorative-base, #222);
+  font-weight: 700;
+}
+
+.workflowResourceTableNote {
+  color: var(--text-subdued, #656565);
+  font-size: 0.75rem;
+  margin: 6px 0 0;
+}
+
+.workflowResourceJobId {
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.componentWorkflows {
+  min-width: 0;
+}
+
+.componentWorkflowNotes {
+  max-width: 80ch;
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.componentWorkflowToolbar {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.componentWorkflowSource {
+  display: block;
+  margin: 0 0 10px;
+}
+
+.componentWorkflowToolbar .workflowResourcesSubcopy {
+  margin: 0;
+}
+
+.componentWorkflowFilter {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.componentWorkflowTable tbody tr {
+  height: 54px;
+}
+
+.componentWorkflowTable thead th {
+  vertical-align: bottom;
+}
+
+.componentWorkflowTable tbody th,
+.componentWorkflowTable tbody td {
+  vertical-align: middle;
+}
+
+.componentWorkflowTable tbody th:first-child {
+  max-width: 260px;
+  min-width: 180px;
+  white-space: normal;
+  width: 260px;
+}
+
+.componentWorkflowTable tbody th:first-child .textButton {
+  overflow-wrap: anywhere;
+  text-align: left;
+  white-space: normal;
+}
+
+.componentWorkflowSortButton,
+.workflowResourceSortButton {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+  text-transform: inherit;
+  white-space: nowrap;
+}
+
+.workflowResourceDestinationTable thead th {
+  vertical-align: bottom;
+}
+
+.componentWorkflowLatest {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.componentWorkflowLatest .workflowHealthStatus {
+  padding: 2px 7px;
+}
+
+.componentWorkflowNoData {
+  color: var(--text-subdued, #656565);
+  font-style: italic;
+}
+
+.gcpProjectJobs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.gcpProjectMetricTable {
+  min-width: 0;
+}
+
+.gcpProjectJobs > section > h4,
+.gcpProjectMetricTable h4 {
+  font-size: 0.875rem;
+  margin: 0 0 4px;
+}
+
+.gcpProjectShareCharts {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.gcpProjectShareChart {
+  min-width: 0;
+}
+
+.gcpProjectShareChart h5 {
+  font-size: 0.8rem;
+  margin: 0 0 8px;
+}
+
+.gcpProjectShareBody {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(120px, 170px) minmax(0, 1fr);
+}
+
+.gcpProjectShareCanvas {
+  max-width: 170px;
+  position: relative;
+}
+
+.gcpProjectShareSvg {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.gcpProjectShareSvg path {
+  stroke: var(--background-base, #fff);
+  stroke-width: 2px;
+}
+
+.gcpProjectShareTotal {
+  fill: var(--text-base, #121212);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.gcpProjectShareTotalLabel {
+  fill: var(--text-subdued, #656565);
+  font-size: 0.68rem;
+}
+
+.gcpProjectShareLegend {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.gcpProjectShareLegendButton {
+  align-items: center;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  font: inherit;
+  gap: 7px;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  padding: 2px;
+  text-align: left;
+  width: 100%;
+}
+
+.gcpProjectShareLegendButton:focus-visible {
+  outline: 2px solid #14833b;
+  outline-offset: 2px;
+}
+
+.gcpProjectShareLegend strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.gcpProjectShareSwatch {
+  height: 10px;
+  width: 10px;
+}
+
+.gcpProjectShareSvg path[data-emphasis='active'] {
+  stroke-width: 3px;
+}
+
+.gcpProjectShareSvg path[data-emphasis='muted'] {
+  opacity: 0.25;
+}
+
+.gcpProjectShareSvg path[data-bucket-key] {
+  transition:
+    opacity 120ms ease,
+    stroke-width 120ms ease;
+}
+
+.gcpProjectShareTooltip {
+  background: #121212;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 7px 9px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.gcpProjectShareTooltip strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.gcpProjectShareTooltip ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.gcpProjectMetricTable thead th {
+  vertical-align: bottom;
+}
+
+.gcpProjectMetricTable tbody .workflowResourceDestination {
+  color: inherit;
+  font: inherit;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.gcpProjectMetricTable tbody .workflowResourceDestination .textButton {
+  text-align: left;
+}
+
+.gcpProjectAttribution {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.gcpProjectAttribution_network_workflow {
+  background: #d9f2e3;
+  color: #176c3a;
+}
+
+.gcpProjectAttribution_external_workflow,
+.gcpProjectAttribution_unattributed,
+.gcpProjectAttribution_unknown {
+  background: #ececec;
+  color: #555;
+}
+
+.gcpProjectAttribution_partial_attribution {
+  background: #fff0c2;
+  color: #765800;
+}
+
+.workflowAttributeColumns {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.attributeList {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.7fr) minmax(0, 1.3fr);
+  margin: 0 0 12px;
+}
+
+.attributeList dt,
+.attributeList dd {
+  border-bottom: 1px solid var(--decorative-subdued, #dedede);
+  margin: 0;
+  overflow-wrap: anywhere;
+  padding: 5px 0;
+}
+
+.attributeList dt {
+  color: var(--text-subdued, #656565);
+  font-weight: 700;
+}
+
+.relatedList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.relatedGroup + .relatedGroup {
+  margin-top: 10px;
+}
+
+.relatedGroup h4 {
+  font-size: 0.78rem;
+  margin: 0 0 4px;
+}
+
+.pagination {
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.pagination .secondaryButton {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .dataAsOf {
+    text-align: left;
+  }
+
+  .sectionHeadingRow,
+  .displayControls {
+    flex-direction: column;
+  }
+
+  .graphLegendControls {
+    align-items: flex-start;
+  }
+
+  .filterRow {
+    grid-template-columns: 1fr;
+  }
+
+  .entityDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowAttributeColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowHealthGrid,
+  .workflowHealthCharts,
+  .workflowResourceOverview {
+    grid-template-columns: 1fr;
+  }
+}
